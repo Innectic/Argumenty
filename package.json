@@ -1,13 +1,12 @@
 {
   "name": "argumenty",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sane Typescript / Node argument parsing.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "directories": {
     "lib": "lib"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/node": "^8.0.47",
     "typescript": "^2.5.3"

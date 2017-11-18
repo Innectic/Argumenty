@@ -27,20 +27,17 @@ Transformers allow the changing of an argument's value.
 If you wanted to get the contents of a file instead of storing a file name, you could do so like this:
 
 ```typescript
-import { Argumenty, TransformerResponse, ParsedArgument } from "argumenty";
+import { Argumenty, ParsedArgument } from "argumenty";
 
 const fs = require("fs");
 
-function getFileContents(arg: ParsedArgument): TransformerResponse {
+function getFileContents(arg: ParsedArgument): any {
 	// Check if the file exists
 	if (!fs.existsSync(arg.value)) {
-		return { valid: false, value: null };
+		return null;
 	}
 	// Since it does, read the contents
-	return {
-		value: true,
-		value: fs.readFileSync(arg.value).toString()
-	};
+	return fs.readFileSync(arg.value).toString();
 }
 
 const argumenty = new Argumenty();

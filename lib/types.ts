@@ -1,12 +1,7 @@
 
 export type ArgumentType = "string" | "number" | "boolean" | "remaining" | "flag"; // XXX: Maybe replace remaining with all?
 
-export type Transformer = (arg: ParsedArgument) => TransformerResponse;
-
-export interface TransformerResponse {
-	valid: boolean;
-	value: any;
-}
+export type Transformer = (arg: ParsedArgument) => any;
 
 /**
  * A parsed argument from the command line.

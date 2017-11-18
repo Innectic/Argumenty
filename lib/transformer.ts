@@ -11,14 +11,14 @@ export class TransformerHandler {
 		try {
 			const response = arg.transformer(arg);
 
-			if (!response.valid) {
+			if (!response) {
 				console.error("Could not transform argument!"); // TODO: Better message
 				return null;
 			}
 			// If it was a valid response, return the new argument
 			return {
 				name: arg.name,
-				value: response.value
+				value: response
 			};
 		} catch (e) {
 			// If your transformer throws an error you shouldn't be writing transformers
